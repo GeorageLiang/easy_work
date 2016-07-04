@@ -1,0 +1,154 @@
+//@import "var";
+
+@mixin htmlInit($bgc){
+  html{
+    @include htmlScollInit();
+  }
+  html,body{
+    background: $bgc;
+  }
+}
+
+@mixin swaper($width,$bg-center){
+  .swaper{
+    position: relative;
+    width:$width;
+    height: 100%;
+    margin: 0 auto;
+    background: url(#{$bg-center}) no-repeat;
+    background-position: top center;
+  }
+}
+
+@mixin container($min-w,$height,$bg,$bg-center){
+  .container{
+    position: relative;
+    width: 100%;
+    @include min-width($min-w);
+    height:$height;
+    background: url(#{$bg}) no-repeat;
+    background-position: top center;
+    @include swaper(#{$min-w}px,$bg-center);
+  }
+}
+
+@mixin header($logo-bg,$logo-w,$logo-h,$nav-bg,$nav-w,$nav-h){
+  .header{
+    position: absolute;
+    width: 100%;
+    padding-top: 5px;
+    &__logo{
+      background: url(#{$logo-bg}) no-repeat;
+      width:203px;
+      height: 113px;
+      float: left;
+    }
+    &__nav{
+      float: right;
+      background: url(#{$nav-bg}) no-repeat;
+      width:$nav-w;
+      height: $nav-h;
+    }
+    .loginBox{
+      position: absolute;
+      top: 40px;
+      right: 50px;
+    }
+    @include nav();
+  }
+
+}
+
+@mixin nav(){
+  .nav{
+    padding: 2px;
+    text-align: center;
+    a{
+      color: grey!important;
+    }
+    &__item{
+      margin-right: 9px;
+      @include inline_block(middle);
+    }
+  }
+}
+
+
+@mixin footer($min-w,$bg,$op){
+  .footer {
+    width: 100%;
+    @include min-width(1000);
+    margin-top: -80px;
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    background-color: $bg;
+    @include opacity($op);
+    p {
+      width: 920px;
+      margin: 0 auto;
+      padding: 15px 0px 15px 180px;
+      color: #7d725d;
+      position: relative;
+      .flogo {
+        position: absolute;
+        width: 153px;
+        height: 34px;
+        background: url(http://webpic.my4399.com/logo_web4399_blue.png) no-repeat;
+        left: 0;
+        top: 21px;
+        border-right: 1px solid grey;
+        padding-right: 15px;
+      }
+    }
+  }
+}
+
+
+@mixin mask($min-w:1000){
+  .mask {
+    position: absolute;
+    @include min-width($min-w);
+    top: 0;
+    left: 0;
+    @include allHeight();
+    background: #000;
+    @include opacity(60);
+    z-index: 999;
+    display: none;
+  }
+}
+@mixin pop($bg,$width,$height){
+  .pop{
+    &-container{
+      background: url("#{$bg}") no-repeat;
+      width:$width;
+      height:$height;
+      border:7px solid #fff;
+      margin-left: - $width/2;
+      z-index: 1000;
+      @include fixed(200,50%);
+      p{
+        width: 80%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+      }
+      .font--larger{
+        height:90px;
+        line-height: 90px;
+      }
+      display: none;
+    }
+    .close{
+      background: url("../images/close.png") no-repeat;
+      width:44px;
+      height:41px;
+      position: absolute;
+      right:-50px;
+      cursor: pointer;
+    }
+    @include mask();
+  }
+}

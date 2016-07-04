@@ -1,0 +1,25 @@
+{
+  "name": "tiankongzhicheng",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass sass -o style",
+    "serve": "browser-sync start --port 3010 --server --files *.html,style/*.css --browser chrome",
+    "watch:sass": "onchange sass/*.scss -- npm run sass",
+    "server": "npm-run-all --parallel serve sass watch:sass jade watch:jade",
+    "jade": "jade Template/index.jade --out ./",
+    "watch:jade": "onchange Template/*.jade -- npm run jade"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "node-sass": "^3.7.0",
+    "npm-run-all": "^2.1.1",
+    "onchange": "^2.5.0",
+    "sass-loader": "^3.2.0",
+    "susy": "^2.2.12",
+    "webpack": "^1.13.1"
+  }
+}

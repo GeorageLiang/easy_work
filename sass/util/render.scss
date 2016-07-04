@@ -1,0 +1,12 @@
+@import "neat";
+@import "var";
+@import "utils_normal";
+@import "utils_mixin";
+@import "utils_functions";
+@import "utils_layout";
+
+@include htmlInit($html-init-color);
+@include container($min-width,$page-height,$container-bg,$container-center-bg);
+@include header($header-logo-bg,$header-width,$header-height,$nav-bg,$nav-width,$nav-height);
+@include footer($min-width,$footer-color,$footer-opacity);
+@include pop($pop-bg,$pop-width,$pop-height);

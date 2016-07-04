@@ -1,0 +1,40 @@
+.font{
+  &--larger{
+    font-size: 50px;
+  }
+  &--sm{
+    font-size: 14px;
+  }
+  &--md{
+    font-size: 18px;
+  }
+}
+
+.light{
+  &--major{
+    color:#e50000;
+  }
+  &--normal{
+    color:#3b0000;
+  }
+  &--sun{
+    color:#fff500;
+  }
+}
+
+.btn{
+  cursor:pointer;
+  &--default{
+
+  }
+}
+a{
+  cursor:pointer;
+}
+
+.artical{
+  &--txt{
+    text-align: left!important;
+  }
+}
+

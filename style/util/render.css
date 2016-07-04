@@ -1,0 +1,728 @@
+@charset "UTF-8";
+/**
+* @file:      Neat.css V1.1.0
+* @author:    һ˿
+* @update:    2013-11-22 14:55:29;
+* @copyright: ���� normalize.css | MIT License
+* @doc:
+*/
+/**
+* Neat.css ����������
+* ����ҵ����Ҫ���ݵ��������������¼��㣺
+* 1.����BUG���ر��ǵͼ��������ĳ���BUG��
+* 2.ͳһЧ��������äĿ׷������Ϊ0��
+* 3.�������ݣ�
+* 4.������Ӧʽ��
+* 5.�����ƶ��豸��
+*/
+/* ==========================================================================
+ �м����ޣ��޼�����
+ ========================================================================== */
+body, dl, dd,
+ul, ol,
+h1, h2, h3, h4, h5, h6, pre,
+form, fieldset, legend, input, textarea, optgroup,
+p, blockquote, figure, hr, menu, dir,
+thead, tbody, tfoot, th, td {
+  margin: 0;
+  padding: 0; }
+
+/**
+* �Ǵ����������Ű���վͨ������Ҫ�б��������Ҫ�ɵ�������
+*/
+ul, ol {
+  list-style-type: none;
+  list-style-image: none; }
+
+/* ==========================================================================
+ ����
+ ========================================================================== */
+/**
+* ȥ������Ĭ�ϵ��»��ߣ��������ֿɶ���
+*/
+a {
+  text-decoration: none; }
+
+/**
+* ȥ�� IE 10+ ��������ʱ�Ļ�ɫ����
+*/
+a:active {
+  background-color: transparent; }
+
+/**
+* ȥ������ʱ�Ľ�������ͬʱ��֤ʹ�ü��̿�����ʾ������
+*/
+a:active,
+a:hover {
+  outline: 0 none; }
+
+/**
+* ͳһ Chrome �� Safari �Ľ�������ʽ
+* Chrome �� thin �ؼ��ַŴ�ҳ���󽹵��򲻻��Ŵ� http://jsbin.com/ehakom/1
+* Firefox �� box-shadow �ᵼ�½�����λ��ƫ�ƣ����á�outline-offset������
+*
+*/
+a:focus {
+  outline: 1px dotted; }
+
+/* ==========================================================================
+ �����ͻ����Ű�
+ ========================================================================== */
+/**
+* 1.��ֹ iOS �����ֺŷŴ���ͬʱ��֤��PC�� zoom ��������
+*/
+html {
+  text-size-adjust: 100%;
+  /* 1 */
+  font-size: 62.5%;
+  /* 10/16=62.5% */ }
+
+body {
+  font-size: 14px;
+  line-height: 1.8; }
+
+/**
+* ���� font-family Сд�����ڿո����������ӵ�����
+* @default-font: 'helvetica neue', tahoma, \5B8B\4F53, sans-serif;
+* @heading-font: 'helvetica neue', tahoma, 'hiragino sans gb', stheiti,
+  \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, 'wenquanyi micro hei', sans-serif;
+* @code-font: monaco, menlo, consolas, monospace;
+*/
+/**
+* ��������ʹ�ö�����������(OS X)��΢���ź�(Windows)����Ȫ��΢�׺�(Linux)
+* ����ʹ�� tahoma
+* 1. ��ֹԪ���С�font-family�����ܼ̳�
+* 2. ���������� OS X ����д��ǰ��
+* 3. Opera 12.1 ֮ǰ�汾��֧������������Ӣ������
+* 4. ΢���źڡ�\5FAE\8F6F\96C5\9ED1��,�������塸\5B8B\4F53��
+*/
+body,
+button,
+input,
+select,
+textarea {
+  font-family: 'helvetica neue',arial,'hiragino sans gb',stheiti,'wenquanyi micro hei',\5FAE\8F6F\96C5\9ED1,\5B8B\4F53,sans-serif;
+  -ms-text-autospace: ideograph-alpha ideograph-numeric ideograph-parenthesis;
+  /* 5 */
+  text-spacing: ideograph-alpha ideograph-numeric ideograph-parenthesis;
+  /* 5 */ }
+
+/**
+* ����С�� 12px �ɶ��Ժܲ�
+* 1. ͳһ IE 6-7 ��������С
+* 2. ͳһ Firefox 4+��Safari 5 �� Chrome �С�section���͡�article���ڵ�������С
+*/
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; }
+
+h1 {
+  font-size: 36px; }
+
+h2 {
+  font-size: 30px; }
+
+h3 {
+  font-size: 22px; }
+
+h4 {
+  font-size: 18px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  font-size: 12px; }
+
+/**
+* ������abbr��Ԫ���� Firefox ������������û���»��ߵ�����
+* �����ʺŹ��꣬��ȷ����
+*/
+abbr,
+acronym {
+  border-bottom: 1px dotted;
+  /* 1 */
+  cursor: help;
+  /* 2 */ }
+
+/**
+* Firefox3+��Safari4/5 �� Chrome ��ͳһ����Ϊ����
+*/
+b,
+strong {
+  font-weight: bold; }
+
+/**
+* ���� Safari5 �� Chrome ��û����ʽ������
+*/
+dfn {
+  font-style: italic; }
+
+/**
+* ���� Firefox ������������֮���Ĳ���
+*/
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+* ��ҳ���ǣ�ӫ����
+* ���� IE6-11 ��û����ʽ������
+*/
+mark {
+  background-color: #D2E5FF;
+  color: #000; }
+
+/**
+* ͳһ��������������
+* ����Ҫ����ȷ�������� 0 ����ĸ o
+* Mac ����ʹ�� Monaco��Windows ����ʹ�� Consolas
+* XP�Դ� Courier New
+* Windows 7��ʼ�Դ��� Consolas
+* Mac���Դ���Monaco��Osaka-Mono
+*/
+code,
+kbd,
+pre,
+samp {
+  font-family: monaco, menlo, consolas, 'courier new', courier, monospace; }
+
+/**
+* ��ǿ������������ pre ��ǩ���ı��Ŀɶ���
+* 1. IE 6-7 ��֧�� pre-wrap
+* 2. pre ��ǩӦ������������
+*/
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  /* 1 */
+  word-wrap: break-word;
+  overflow: auto; }
+
+/**
+* ��������
+* IE 6-7 ��֧�� quotes ����
+* �ִ�������ȥ�� quotes ����
+*/
+q {
+  quotes: none; }
+
+/**
+* Safari 4 ��֧��<q>��ǩ
+*/
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+/**
+* ������ҳ<small>Ԫ���ֺ�С�� 12px �����Ķ�
+*/
+small {
+  font-size: 85.7%;
+  /* 12/14=0.8571428571 */ }
+
+/**
+* ��ֹ�����������е�<sub>��<sup>Ӱ���и�
+* http://jsbin.com/usoyal/1/edit
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+ ����
+ ========================================================================== */
+/**
+* �ϲ���Ԫ���߿�
+*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/**
+* �޸� IE �� th ���ܼ̳� text-align �����Ⲣͳһ������
+* http://jsbin.com/evoxif/2/edit
+*/
+th {
+  text-align: left; }
+
+/**
+* ��Ԫ�����ӱ߿�
+*/
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px 10px; }
+
+/**
+* ��ͷ�ײ��߿�
+*/
+table th {
+  font-weight: inherit;
+  border-bottom-width: 2px;
+  border-bottom-color: #ccc; }
+
+/* ==========================================================================
+ Ƕ��Ԫ��
+ ========================================================================== */
+/**
+* 1. ȥ�� IE6-9 �� Firefox 3 �� a �ڲ� img Ԫ��Ĭ�ϵı߿�
+* 2. ���� IE8 ͼƬ��ʧbug
+* 3. ��ֹ img ָ����height��ʱͼƬ�߶Ȳ��ܰ��տ��ȵȱ����ţ�����ͼƬ����
+    http://jsbin.com/aJoTUca/2
+* 4. ��ͼƬ֧����Ӧʽ
+* 5. ȥ���ִ�������ͼƬ�ײ��Ŀ�϶
+* 6. �޸� IE7 ͼƬ����ʧ��
+*/
+img {
+  border: 0 none;
+  /* 1 */
+  width: auto\9;
+  /* 2 */
+  height: auto;
+  /* 3 */
+  max-width: 100%;
+  /* 4 */
+  vertical-align: top;
+  /* 5 */
+  -ms-interpolation-mode: bicubic;
+  /* 6 */ }
+
+/**
+* �޸� IE9 �еġ�overflow���Ĺ�������
+*/
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+ ����
+ ========================================================================== */
+/**
+* ����һ�µı߿������߾����ڱ߾�
+*/
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+* 1. ���� IE 6-9 ����ɫ���ܼ̳е�����
+* 2. ���� Firefox3 �����ֲ����е�����
+* 3. ���� IE6-7 �й����Ķ��뷽ʽ
+*/
+legend {
+  border: 0 none;
+  /* 1 */
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */ }
+
+/**
+* 1. �������������������岻�̳е�����
+* 2. �����������������ֺŲ��̳е�����
+* 3. ���� Firefox 3+�� Safari5 �� Chrome �����߾಻ͬ������
+* 4. �����������������µĴ�ֱ���뷽ʽ
+*/
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+  vertical-align: baseline;
+  /* 4 */
+  *vertical-align: middle;
+  /* 4 */ }
+
+/**
+* ���� IE7 �����������ӱ߾಻�����ӵ�����
+*/
+input,
+button {
+  *overflow: visible; }
+
+/**
+* ͳһ����������text-transform�������̳е�����
+* http://jsbin.com/iqecic/1/edit
+* http://tjvantoll.com/2012/07/10/default-browser-handling-of-the-css-text-transform-property/
+*/
+button,
+select {
+  text-transform: none; }
+
+/**
+* 1. ���� Android 4.0.* �е� WebKit bug ����bug���ƻ�ԭ����
+ ��audio�� �͡�video���Ŀ�����
+* 2. ���� iOS ���޷����ÿɵ����ġ�input��������
+* 3. ͳһ�������͵ġ�input���Ĺ�����ʽ
+*/
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+* ���ð�ť����ʱ������ʽ
+*/
+button[disabled],
+input[disabled] {
+  cursor: default; }
+
+/**
+* 1. ���� IE 8/9 box-sizing ������Ϊ��content-box��������
+* 2. �Ƴ� IE 8/9 �ж������ڱ߾�
+* 3. �Ƴ� IE7 �ж������ڱ߾�(IE6 ����Ȼ����)
+*/
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */ }
+
+/**
+* 1. ���� Safari 5 �� Chrome �С�appearance��������Ϊ��searchfield��������
+* 2. ���� Safari 5 �� Chrome �С�box-sizing��������Ϊ ��border-box��������
+*/
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box; }
+
+/**
+* 1.�Ƴ� OS X �� Safari5 �� Chrome �������ڲ������߾�
+* 2.������Ҫ����������ť��Ҫ����
+ input[type="search"]::-webkit-search-cancel-button
+*/
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+* �Ƴ� Firefox 3+ ���ڱ߾�
+*/
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+* ���� Chrome �� input [type="number"] ���ض��߶Ⱥ� font-size ʱ,
+* ����һ����ͷ�������ɡ�cursor: text��
+* @demo: http://jsfiddle.net/FFXEc/
+* ������ʾ��http://gtms04.alicdn.com/tps/i4/T18kd8FCtaXXc_FhcF-330-350.gif
+*/
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+* 1. �Ƴ� IE6-11 ��Ĭ�ϵĴ�ֱ������
+* 2. ��ֹˮƽ�϶�����ֹ�ƻ�����
+*/
+textarea {
+  overflow: auto;
+  /* 1 */
+  resize: vertical;
+  /* 2 */ }
+
+/**
+* ���� Chrome 30- option �������޷���ʾ������
+* http://jsbin.com/avujas/1/edit
+*/
+select:disabled option:checked,
+option:disabled:checked {
+  color: #D2D2D2; }
+
+/**
+* ���� Safari 3+, Chrome 1+ Placeholder ��������
+*/
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input {
+    line-height: normal !important; } }
+
+/**
+* ���� Firefox 19+ Placeholder ������opacity ������
+*/
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: darkGray;
+  opacity: 1; }
+
+/**
+* label Ԫ�ظ������ͣ���ʾ�˴��ɵ���
+*/
+label {
+  cursor: pointer; }
+
+/**
+* ͳһ select ��ʽ, Firefox ���� padding:1px 0
+* http://jsbin.com/avujas/1/edit
+*/
+select[size],
+select[multiple],
+select[size][multiple] {
+  border: 1px solid #AAA;
+  padding: 0; }
+
+/* ==========================================================================
+ HTML5 Ԫ��
+ ========================================================================== */
+/**
+* ����δ����Ϊ��block����Ԫ��
+*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+* 1. ����δ����Ϊ��inline-block����Ԫ��
+* 2. ���� Chrome��Firefox��Opera �� ��progress��Ԫ�� vertical-align Ĭ��ֵ��һ��
+*/
+audio,
+canvas,
+video,
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+* 1.��ֹ�ִ���������û�С�controls�����Ե� ��audio��Ԫ����ʾ����
+* 2.ȥ�� iOS 5 �ж����ĸ߶�
+*/
+audio:not([controls]) {
+  display: none;
+  /* 1 */
+  height: 0;
+  /* 2 */ }
+
+/**
+* �޸� IE 7/8/9��Firefox 3 �� Safari 4 �� ��hidden�����Բ������õ�����
+* ��IE��Safari��Firefox 22- �����ء�template��Ԫ��
+*/
+[hidden], template {
+  display: none; }
+
+/**
+* Ϊ���϶�Ԫ�������϶��Ĺ���
+* http://jsbin.com/apavod/1/edit
+*/
+[draggable] {
+  cursor: move; }
+
+/**
+* ���� HTML5 dialog Ԫ��
+* Chrome 31 ֧�֣��迪�� chrome://flags/#enable-experimental-web-platform-features
+* Chrome 28 ֮ǰ��Firefox �в�֧�� height:fit-content;
+ https://src.chromium.org/viewvc/blink?revision=148314&view=revision
+* ::backdrop ����������ʽ
+* @demo: http://jsbin.com/iPACab/1
+*/
+dialog {
+  border: 1px solid;
+  padding: 0;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: fit-content;
+  height: fit-content; }
+
+dialog::backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3); }
+
+.font--larger {
+  font-size: 50px; }
+
+.font--sm {
+  font-size: 14px; }
+
+.font--md {
+  font-size: 18px; }
+
+.light--major {
+  color: #e50000; }
+
+.light--normal {
+  color: #3b0000; }
+
+.light--sun {
+  color: #fff500; }
+
+.btn {
+  cursor: pointer; }
+
+a {
+  cursor: pointer; }
+
+.artical--txt {
+  text-align: left !important; }
+
+html {
+  *background-image: url(about:blank);
+  *background-attachment: fixed; }
+
+html, body {
+  background: #000; }
+
+.container {
+  position: relative;
+  width: 100%;
+  width: 100%;
+  _width: expression((document.documentElement.clientWidth||document.body.clientWidth) < 1000? "1000px":"100%");
+  min-width: 1000px;
+  height: 1200px;
+  background: url(../images/bg.jpg) no-repeat;
+  background-position: top center; }
+  .container .swaper {
+    position: relative;
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    background: url(../images/bg-center.jpg) no-repeat;
+    background-position: top center; }
+
+.header {
+  position: absolute;
+  width: 100%;
+  padding-top: 5px; }
+  .header__logo {
+    background: url(../images/logo.png) no-repeat;
+    width: 203px;
+    height: 113px;
+    float: left; }
+  .header__nav {
+    float: right;
+    background: url(../images/nav.png) no-repeat;
+    width: 275px;
+    height: 32px; }
+  .header .loginBox {
+    position: absolute;
+    top: 40px;
+    right: 50px; }
+  .header .nav {
+    padding: 2px;
+    text-align: center; }
+    .header .nav a {
+      color: grey !important; }
+    .header .nav__item {
+      margin-right: 9px;
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      vertical-align: middle; }
+
+.footer {
+  width: 100%;
+  width: 100%;
+  _width: expression((document.documentElement.clientWidth||document.body.clientWidth) < 1000? "1000px":"100%");
+  min-width: 1000px;
+  margin-top: -80px;
+  clear: both;
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+  opacity: 0.6;
+  -moz-opacity: 0.6;
+  filter: alpha(opacity=60); }
+  .footer p {
+    width: 920px;
+    margin: 0 auto;
+    padding: 15px 0px 15px 180px;
+    color: #7d725d;
+    position: relative; }
+    .footer p .flogo {
+      position: absolute;
+      width: 153px;
+      height: 34px;
+      background: url(http://webpic.my4399.com/logo_web4399_blue.png) no-repeat;
+      left: 0;
+      top: 21px;
+      border-right: 1px solid grey;
+      padding-right: 15px; }
+
+.pop-container {
+  background: url("../images/pop_bg.jpg") no-repeat;
+  width: 757px;
+  height: 377px;
+  border: 7px solid #fff;
+  margin-left: -378.5px;
+  z-index: 1000;
+  position: fixed;
+  _position: absolute;
+  top: 200px;
+  left: 50%;
+  _top: expression(eval(document.documentElement.scrollTop+200));
+  display: none; }
+  .pop-container p {
+    width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px; }
+  .pop-container .font--larger {
+    height: 90px;
+    line-height: 90px; }
+
+.pop .close {
+  background: url("../images/close.png") no-repeat;
+  width: 44px;
+  height: 41px;
+  position: absolute;
+  right: -50px;
+  cursor: pointer; }
+
+.pop .mask {
+  position: absolute;
+  width: 100%;
+  _width: expression((document.documentElement.clientWidth||document.body.clientWidth) < 1000? "1000px":"100%");
+  min-width: 1000px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  _height: expression(document.body.offsetHeight+"px");
+  background: #000;
+  opacity: 0.6;
+  -moz-opacity: 0.6;
+  filter: alpha(opacity=60);
+  z-index: 999;
+  display: none; }

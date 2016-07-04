@@ -1,0 +1,58 @@
+
+@mixin inline_block($pos){
+  display: inline-block;
+  *display: inline;
+  *zoom:1;
+  vertical-align: #{$pos};
+}
+@mixin ieHack($mark,$key,$val){
+  @if($mark == "6"){
+    _#{$key}:#{$val};
+  }@else if($mark == "7"){
+    *#{$key}:#{$val};
+  }@else if(($mark == "8")){
+    #{$key}:#{$val}\0;
+  }@else if($mark == "all"){
+    #{$key}:#{$val}\9;
+  }
+}
+@mixin fixed($top:0,$left:0){
+  position: fixed;
+  _position:absolute;
+  top:#{$top}px;
+  left:$left;
+  _top:expression(eval(document.documentElement.scrollTop+#{$top}));
+}
+@mixin opacity($op){
+  opacity: $op / 100;
+  -moz-opacity:$op / 100;
+  filter:alpha(opacity= $op);
+}
+@mixin ie6slideHack{
+  background-image:url(about:blank);
+  background-attachment:fixed;
+}
+
+@mixin min-width($width){
+  width: 100%;
+  _width:expression((document.documentElement.clientWidth||document.body.clientWidth) < #{$width}? "#{$width}px":"100%");
+  min-width: #{$width}px;
+}
+
+@mixin allHeight(){
+  height:100%;
+  _height:expression(document.body.offsetHeight+"px");
+}
+
+@mixin htmlScollInit(){
+  @include ieHack("7","background-image","url(about:blank)");
+  @include ieHack("7","background-attachment","fixed");
+}
+
+
+@mixin p-height($footP_height){
+  *position: relative;
+  *height:$footP_height;
+  *top:50%;
+  *margin-top: -$footP_height/2;
+}
