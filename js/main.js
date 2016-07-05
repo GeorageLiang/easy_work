@@ -8,14 +8,9 @@ $("document").ready(function(){
         return false;
     });
 
-    $(".gift-btn--rule").on("click",function(){
-//            $(".cake").css("background","url('../images/cake/cake4.png')");
+    $("body").on("click",function(){
         $(".pop6").show();
         $(".mask").show();
         return false
     });
 });
-
-
-
-//        $(".cake").css("background","url('../images/cake/cake4.png')");   //点亮蛋糕,cake0,cake1..cake4

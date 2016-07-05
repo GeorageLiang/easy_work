@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass sass -o style",
     "serve": "browser-sync start --port 3010 --server --files *.html,style/*.css --browser chrome",
-    "watch:sass": "onchange sass/*.scss -- npm run sass",
+    "watch:sass": "onchange sass/*.scss sass/*/*.scss -- npm run sass",
     "server": "npm-run-all --parallel serve sass watch:sass jade watch:jade",
     "jade": "jade Template/index.jade --out ./",
     "watch:jade": "onchange Template/*.jade -- npm run jade"

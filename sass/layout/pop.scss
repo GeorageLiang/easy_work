@@ -1,0 +1,48 @@
+
+@mixin mask($min-w:1000){
+  .mask {
+    position: absolute;
+    @include min-width($min-w);
+    top: 0;
+    left: 0;
+    @include allHeight();
+    background: #000;
+    @include opacity(60);
+    z-index: 999;
+    display: none;
+  }
+}
+@mixin pop($bg,$width,$height){
+  .pop{
+    &-container{
+      background: url("#{$bg}") no-repeat;
+      width:$width;
+      height:$height;
+      border:7px solid #fff;
+      margin-left: - $width/2;
+      z-index: 1000;
+      @include fixed(200,50%);
+      p{
+        width: 80%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+      }
+      .font--larger{
+        height:90px;
+        line-height: 90px;
+      }
+      display: none;
+    }
+    .close{
+      background: url("../../images/close.png") no-repeat;
+      width:44px;
+      height:41px;
+      position: absolute;
+      right:-50px;
+      cursor: pointer;
+    }
+    @include mask();
+  }
+}

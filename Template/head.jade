@@ -15,5 +15,7 @@ head
     meta(content="True",name="HandheldFriendly")
     meta(name="format-detection",content="telphone=no, email=no")
     link(rel="stylesheet",type="text/css",href="style/main.css")
+    - if(type != "pc")
+        link(rel="stylesheet",media="(max-width:800px)",href="style/small_main.css")
     //- <link rel="stylesheet" media="(max-width:800px)" href="style/small_main.css"/>
     title= title
