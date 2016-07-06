@@ -1,7 +1,8 @@
 
 @mixin mask($min-w:1000){
   .mask {
-    position: absolute;
+    position: fixed;
+    @include ieHack("6","position","absolute");
     @include min-width($min-w);
     top: 0;
     left: 0;

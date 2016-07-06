@@ -24,7 +24,7 @@
   .container{
     width: 100%;
     background: url(#{$small-bg}) no-repeat center top;
-    background-size: 100%;
+    background-size: 100% 100%;
     min-width: 0;
     height: rem($small-h,2);
     .swaper{

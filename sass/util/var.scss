@@ -19,7 +19,7 @@ $container-bg:"../images/bg.jpg";
 $container-center-bg:"../images/bg-center.jpg";
 //container--response
 $small-bg:"../images/small-bg.jpg";
-$small-h:1500px;
+$small-h:1400px;
 
 //header
 $header-logo-bg:"../images/logo.png";
@@ -34,6 +34,10 @@ $nav-height:32px;
 $footer-color:#000;
 $footer-opacity:100;
 $footer-content-width:920px;
+$footer-h:220px;
+
+//默认"default"，多栏图标形式设置"limit" 注意：同时要开启模板里面的footerType属性（template/var）
+$footerType: "default";
 //pop
 $pop-bg:"../images/pop_bg.jpg";
 $pop-width:757px;

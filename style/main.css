@@ -802,7 +802,8 @@ html, body {
   cursor: pointer; }
 
 .pop .mask {
-  position: absolute;
+  position: fixed;
+  _position: absolute;
   width: 100%;
   _width: expression((document.documentElement.clientWidth||document.body.clientWidth) < 1000? "1000px":"100%");
   min-width: 1000px;

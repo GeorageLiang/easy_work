@@ -1,18 +1,54 @@
 include var
 .footer
     - if(type == "pc")
-        p
-              | 文化部网络游戏举报网站：http://www.12318.gov.cn纠纷处理方式：联系客服或依《用户协议》约定方式处理 <br>
-              | ICP证：闽B2-20040099&nbsp;网络文化经营许可证：闽网文[2012]0810-015号 新出网证(闽)字06号Copyright ? 2006-2014 web.4399.com
-              span.flogo
+        - if(footerType == "default")
+            p
+                  | 文化部网络游戏举报网站：http://www.12318.gov.cn纠纷处理方式：联系客服或依《用户协议》约定方式处理 <br>
+                  | ICP证：闽B2-20040099&nbsp;网络文化经营许可证：闽网文[2012]0810-015号 新出网证(闽)字06号Copyright ? 2006-2014 web.4399.com
+                  span.flogo
+        - else if(footerType == "limit")
+            .foot-center
+                .foot-line
+                    .flogo
+                    .logo-fic
+                    .con
+                        p.links
+                            a(href="") 首頁
+                            a(href="") 遊戲
+                            a(href="") 儲值
+                            a(href="") 客服
+                        p.copyright 四三九九網絡有限公司版權<br>© 4399sy.com.hk All Rights Reserved
+                    em.line
+                .limit
+                    | 遊戲情節涉及暴力、戀愛交友<br>
+                    | 請注意使用時間，避免沉迷於遊戲<br>
+                    | 本遊戲部分內容需要購買遊戲幣消費
     - else
-        .footer-content.row
-            .footer-content__logo
-            .footer-content__artical
-                p 关于本站|免责声明|联系我们
-                p 粤ICP备11010538号-7网络文化经营许可证 粤网文[2014]2168-467号 新出网证(粤)字049号
-                p 广州四三九九信息科技有限公司 Copyright © 2012-2015 4399sy.com All Rights Reserved
-            .footer-content__artical--small
-                p 粤ICP备11010538号-7
-                p 网络文化经营许可证 粤网文[2011]0791-113号
-                p 新出网证(粤)字049号
+        - if(footerType == "default")
+            .footer-content.row
+                .footer-content__logo
+                .footer-content__artical
+                    p 关于本站|免责声明|联系我们
+                    p 粤ICP备11010538号-7网络文化经营许可证 粤网文[2014]2168-467号 新出网证(粤)字049号
+                    p 广州四三九九信息科技有限公司 Copyright © 2012-2015 4399sy.com All Rights Reserved
+                .footer-content__artical--small
+                    p 粤ICP备11010538号-7
+                    p 网络文化经营许可证 粤网文[2011]0791-113号
+                    p 新出网证(粤)字049号
+        - else if(footerType == "limit")
+            .foot-center
+                .foot-line
+                    .flogo
+                    .logo-fic
+                    .con
+                        p.links
+                            a(href="") 首頁
+                            a(href="") 遊戲
+                            a(href="") 儲值
+                            a(href="") 客服
+                        p.copyright 四三九九網絡有限公司版權<br>© 4399sy.com.hk All Rights Reserved
+                    em.line
+                .limit
+                    | 遊戲情節涉及暴力、戀愛交友<br>
+                    | 請注意使用時間，避免沉迷於遊戲<br>
+                    | 本遊戲部分內容需要購買遊戲幣消費
