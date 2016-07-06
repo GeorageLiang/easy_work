@@ -7,26 +7,46 @@
 
 //html-init
 $html-init-color:#000;
+$screen-md-min:1000px;
+$screen-sm-min:700px;
+
+$type:"!pc";//默认"pc"，要开发响应式页面设置"!pc" 注意：同时要开启模板里面的type属性（template/var）
 
 //container
 $min-width:1000;
-$page-height:1200px;
+$page-height:1080px;
 $container-bg:"../images/bg.jpg";
 $container-center-bg:"../images/bg-center.jpg";
+//container--response
+$small-bg:"../images/small-bg.jpg";
+$small-h:1400px;
+
 //header
 $header-logo-bg:"../images/logo.png";
 $header-width:203px;
 $header-height:113px;
 //nav
+$nav-switch:false;
 $nav-bg:"../images/nav.png";
 $nav-width:275px;
 $nav-height:32px;
 //footer
 $footer-color:#000;
-$footer-opacity:60;
+$footer-opacity:100;
+$footer-content-width:920px;
+$footer-h:220px;
+
+//默认"default"，多栏图标形式设置"limit" 注意：同时要开启模板里面的footerType属性（template/var）
+$footerType: "default";
 //pop
 $pop-bg:"../images/pop_bg.jpg";
 $pop-width:757px;
 $pop-height:377px;
+
+$pop-border-size:7px;
+$pop-border-color:#fff;
+
+$close-bg:transparent;
+$close-position:"inside";//"inside"
 
 

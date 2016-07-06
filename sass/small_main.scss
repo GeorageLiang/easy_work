@@ -1,0 +1,33 @@
+@charset "utf-8";
+@import "util/neat";
+@import "util/flex";
+@import "util/var";
+@import "util/utils_mixin";
+@import "util/utils_layout";
+@import "util/utils_functions";
+@import "util/media";
+
+@if $type != "pc" {
+  @include contain-res($small-bg, $small-h);
+  @include footer-res();
+  @include pop-res();
+  html {
+    width: 100%;
+    min-width: 320px;
+  }
+  body {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

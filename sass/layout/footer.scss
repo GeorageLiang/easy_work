@@ -1,0 +1,213 @@
+//type=pc，footerType为limit时样式的非媒体查询
+@mixin footer-pc-limit($logo-w,$logo-h){
+  .footer {
+    width: 100%;
+    padding: 30px 0;
+    background-color: #121B2C;
+    color: #61676F;
+    position: absolute;
+    bottom: 0;
+  }
+  .footer a {
+    color: #61676F;
+    margin-right: 18px; }
+  .foot-center{
+    width: $footer-content-width;
+    margin: 0 auto;
+  }
+
+  .footer .foot-line {
+    @include inline_block(middle);
+    //@include ieHack("7","width","50%");
+  }
+  .footer .flogo {
+    @include inline_block(middle);
+    margin-right: 10px;
+    width: $logo-w;
+    height: $logo-h;
+    background: url(http://webpic.my4399.com/logo_web4399_blue.png) no-repeat;
+    border-right: 1px solid grey;
+    padding-right: 15px;
+  }
+  .footer .logo-fic {
+    @include inline_block(middle);
+    margin-right: 5px;
+    width: 47px;
+    height: 43px;
+    background: url(../../images/logo-fic.jpg) 0 0 no-repeat; }
+
+  .footer .con {
+    @include inline_block(middle);
+    padding: 5px 0 5px 0px; }
+
+  .footer .line {
+    margin: 0 10px;
+    width: 1px;
+    height: 60px;
+    background-color: #717780; }
+
+  .footer .limit {
+    padding-left: 70px;
+    background: url(../../images/limit.jpg) 0 no-repeat;
+    @include inline_block("middle");
+  }
+}
+
+//type=pc，footerType为default时样式的非媒体查询
+@mixin footer-pc-default($min-w,$bg,$op,$footer-content-width,$logo-w,$logo-h){
+  .footer {
+    width: 100%;
+    @include min-width($min-w);
+    margin-top: -80px;
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    background-color: $bg;
+    @include opacity($op);
+    p {
+      width: $footer-content-width;
+      margin: 0 auto;
+      padding: 15px 0px 15px 180px;
+      color: #7d725d;
+      position: relative;
+      .flogo {
+        position: absolute;
+        width: $logo-w;
+        height: $logo-h;
+        background: url(http://webpic.my4399.com/logo_web4399_blue.png) no-repeat;
+        left: 0;
+        top: 50%;
+        margin-top: -$logo-h/2;
+        border-right: 1px solid grey;
+        padding-right: 15px;
+      }
+    }
+  }
+}
+//type！=pc，footerType为default时样式的媒体查询（小屏）
+@mixin footer-small-default(){
+  .footer {
+    width: 100%;
+    min-width: 320px;
+    height: 13.1rem;
+    margin-top: -13.1rem;;
+    background: #242627;
+    @include opacity(100);
+    &-content {
+      @include display-flex();
+      @include flex-direction(column);
+      @include justify-content(space-around);
+      @include align-items(center);
+      position: relative;
+      width: 28.1rem;
+      height: 100%;
+      &__logo {
+        margin-right: 0;
+      }
+      &__artical {
+        display: none;
+        &--small {
+          display: block;
+          color: #5a5a5a;
+          font-size: 1.2rem;
+          border-top: 1px solid #5a5a5a;
+        }
+      }
+    }
+  }
+}
+
+//type！=pc，footerType为default时样式非媒体查询
+@mixin footer-res-default($min-w,$bg,$op,$footer-content-width,$logo-w,$logo-h){
+  .footer {
+    width: 100%;
+    @include min-width($min-w);
+    margin-top: -80px;
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    background-color: $bg;
+    position: absolute;
+    bottom: 0;
+    @include opacity($op);
+    &-content {
+      position: relative;
+      margin: 0 auto;
+      width: $footer-content-width;
+      &__logo {
+        @include inline_block(middle);
+        background: url("../../images/phone-logo.png") no-repeat;
+        background-size: 100%;
+        width: rem($logo-w);
+        height: rem($logo-h);
+        margin-right: 3rem;
+        @include ieHack("all", width, 204px);
+        @include ieHack("all", height, 34px);
+        @include ieHack("all", margin-right, 30px);
+      }
+      &__artical {
+        color: #adadad;
+        font-size: 16px;
+        @include inline_block("middle");
+        p {
+          margin-top: rem(5px);
+          @include ieHack("all", margin-top, 5px);
+        }
+        &--small {
+          display: none;
+        }
+      }
+    }
+  }
+}
+//type！=pc，footerType为limit时媒体查询样式（小屏）
+@mixin footer-small-limit(){
+  .footer {
+    position: absolute;
+    min-height: rem(131px,2);
+    display: block;
+    position: relative;
+  }
+  .foot-center {
+    width: 80%;
+  }
+  .footer .line {
+    display: none; }
+  .footer .foot-line {
+    background: url(../../images/logo-fic.jpg) 0 no-repeat;
+    padding-left: 70px; }
+  .flogo,.logo-fic{
+    display: none!important;
+  }
+}
+
+
+@mixin footer($type,$min-w,$bg,$op,$swap-w,$logo-w:153px,$logo-h:34px){
+  @if $type == "pc"{
+    @if $footerType == "default"{
+      @include footer-pc-default($min-w,$bg,$op,$footer-content-width,$logo-w,$logo-h);
+    }
+    @else{
+      @include footer-pc-limit($logo-w,$logo-h);
+    }
+  }
+  @else {
+    @if $footerType == "default" {
+      @include footer-res-default($min-w,$bg,$op,$footer-content-width,$logo-w,$logo-h);
+    }
+    @else{
+      @include footer-pc-limit($logo-w,$logo-h);
+    }
+  }
+}
+
+
+//type！=pc时媒体查询样式
+@mixin footer-res(){
+  @if $footerType == "default" {
+    @include footer-small-default();
+  }
+  @else{
+    @include footer-small-limit();
+  }
+}
