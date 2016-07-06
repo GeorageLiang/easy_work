@@ -1,4 +1,4 @@
-
+//type=pc，footerType为limit时样式的非媒体查询
 @mixin footer-pc-limit($logo-w,$logo-h){
   .footer {
     width: 100%;
@@ -53,7 +53,7 @@
   }
 }
 
-
+//type=pc，footerType为default时样式的非媒体查询
 @mixin footer-pc-default($min-w,$bg,$op,$footer-content-width,$logo-w,$logo-h){
   .footer {
     width: 100%;
@@ -84,7 +84,7 @@
     }
   }
 }
-
+//type！=pc，footerType为default时样式的媒体查询（小屏）
 @mixin footer-small-default(){
   .footer {
     width: 100%;
@@ -117,6 +117,7 @@
   }
 }
 
+//type！=pc，footerType为default时样式非媒体查询
 @mixin footer-res-default($min-w,$bg,$op,$footer-content-width,$logo-w,$logo-h){
   .footer {
     width: 100%;
@@ -159,15 +160,13 @@
     }
   }
 }
-
+//type！=pc，footerType为limit时媒体查询样式（小屏）
 @mixin footer-small-limit(){
-
   .footer {
     position: absolute;
     min-height: rem(131px,2);
     display: block;
     position: relative;
-
   }
   .foot-center {
     width: 80%;
@@ -202,6 +201,8 @@
   }
 }
 
+
+//type！=pc时媒体查询样式
 @mixin footer-res(){
   @if $footerType == "default" {
     @include footer-small-default();
@@ -209,5 +210,4 @@
   @else{
     @include footer-small-limit();
   }
-
 }

@@ -10,7 +10,7 @@ $html-init-color:#000;
 $screen-md-min:1000px;
 $screen-sm-min:700px;
 
-$type:"pc";//默认"pc"，要开发响应式页面设置"!pc" 注意：同时要开启模板里面的type属性（template/var）
+$type:"!pc";//默认"pc"，要开发响应式页面设置"!pc" 注意：同时要开启模板里面的type属性（template/var）
 
 //container
 $min-width:1000;
@@ -26,7 +26,7 @@ $header-logo-bg:"../images/logo.png";
 $header-width:203px;
 $header-height:113px;
 //nav
-$nav-switch:true;
+$nav-switch:false;
 $nav-bg:"../images/nav.png";
 $nav-width:275px;
 $nav-height:32px;
@@ -42,5 +42,11 @@ $footerType: "default";
 $pop-bg:"../images/pop_bg.jpg";
 $pop-width:757px;
 $pop-height:377px;
+
+$pop-border-size:7px;
+$pop-border-color:#fff;
+
+$close-bg:transparent;
+$close-position:"inside";//"inside"
 
 

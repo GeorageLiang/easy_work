@@ -13,13 +13,13 @@
     display: none;
   }
 }
-@mixin pop($bg,$width,$height){
+@mixin pop($bg,$width,$height,$border-size,$border-color,$close-bg){
   .pop{
     &-container{
       background: url("#{$bg}") no-repeat;
       width:$width;
       height:$height;
-      border:7px solid #fff;
+      border:$border-size solid #{$border-color};
       margin-left: - $width/2;
       z-index: 1000;
       @include fixed(200,50%);
@@ -31,19 +31,64 @@
         margin-top: 15px;
       }
       .font--larger{
+        font-size: 50px;
         height:90px;
-        line-height: 90px;
+        line-height:90px;
       }
       display: none;
     }
     .close{
-      background: url("../../images/close.png") no-repeat;
+      background: $close-bg;
       width:44px;
       height:41px;
       position: absolute;
-      right:-50px;
+      @if ($close-position == "outside"){
+        right:-50px;
+      }
+      @else if($close-position == "inside"){
+        right:0px;
+      }
       cursor: pointer;
+      img{
+        width: 100%;
+      }
     }
     @include mask();
   }
+}
+
+@mixin pop-small-default(){
+  .pop{
+    &-container{
+      background-size: auto 100%;
+      border-width:rem($pop-border-size,2);
+      width: 28.95rem - rem($pop-border-size,2);
+      height: auto;
+      margin-left: -(28.95rem)/2;
+      margin-top: -17.35rem;
+      top: 50%;
+      left: 50%;
+      z-index: 1000;
+      p{
+        line-height: 20px;
+        margin-top: rem(10px,2);
+        margin-bottom: rem(10px,2);
+      }
+      .font--larger{
+        font-size: rem(50px,2);
+        height:rem(90px,2);
+        line-height: rem(90px,2);
+      }
+    }
+    .close{
+      width:rem(44px,2);
+      height:rem(41px,2);
+    }
+  }
+}
+
+
+//type！=pc时媒体查询样式
+@mixin pop-res(){
+    @include pop-small-default();
 }
