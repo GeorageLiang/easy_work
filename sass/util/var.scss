@@ -16,7 +16,7 @@ $type:"!pc";//默认"pc"，要开发响应式页面设置"!pc" 注意：同时要开启模板里面的type
 $min-width:1000;
 $page-height:1080px;
 $container-bg:"../images/bg.jpg";
-$container-center-bg:"../images/bg-center.jpg";
+$container-center-bg:"";
 //container--response
 $small-bg:"../images/small-bg.jpg";
 $small-h:1400px;
@@ -48,5 +48,6 @@ $pop-border-color:#fff;
 
 $close-bg:transparent;
 $close-position:"inside";//"inside"
+
 
 

@@ -612,14 +612,19 @@ dialog::backdrop {
 
 .container {
   width: 100%;
-  background: url(../images/small-bg.jpg) no-repeat center top;
-  background-size: 100% 100%;
-  min-width: 0;
+  min-width: 320px;
   height: 70rem; }
   .container .swaper {
     background: transparent;
     width: 100%;
     height: 100%; }
+
+.container-bg {
+  width: 100%;
+  min-width: 320px;
+  height: 70rem;
+  background: url(../images/small-bg.jpg) no-repeat center top;
+  background-size: 100% 100%; }
 
 .footer {
   width: 100%;
@@ -677,7 +682,8 @@ dialog::backdrop {
   margin-top: -17.35rem;
   top: 50%;
   left: 50%;
-  z-index: 1000; }
+  z-index: 1000;
+  position: absolute; }
   .pop-container p {
     line-height: 20px;
     margin-top: 0.5rem;

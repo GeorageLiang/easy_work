@@ -699,16 +699,26 @@ html, body {
   width: 100%;
   _width: expression((document.documentElement.clientWidth||document.body.clientWidth) < 1000? "1000px":"100%");
   min-width: 1000px;
-  height: 1080px;
-  background: url(../images/bg.jpg) no-repeat;
-  background-position: top center; }
+  height: 1080px; }
   .container .swaper {
     position: relative;
     width: 1000px;
     height: 100%;
     margin: 0 auto;
-    background: url(../images/bg-center.jpg) no-repeat;
+    background: url() no-repeat;
     background-position: top center; }
+
+.container-bg {
+  position: absolute;
+  width: 100%;
+  _width: expression((document.documentElement.clientWidth||document.body.clientWidth) < 1000? "1000px":"100%");
+  min-width: 1000px;
+  height: 1080px;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background: url(../images/bg.jpg) no-repeat;
+  background-position: top center; }
 
 .header {
   position: absolute;
@@ -837,3 +847,10 @@ html, body {
   filter: alpha(opacity=60);
   z-index: 999;
   display: none; }
+
+#swf {
+  position: absolute;
+  top: 0;
+  left: 0;
+  left: 50%;
+  margin-left: -964px; }
