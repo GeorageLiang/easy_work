@@ -34,7 +34,7 @@
     margin-right: 5px;
     width: 47px;
     height: 43px;
-    background: url(../../images/logo-fic.jpg) 0 0 no-repeat; }
+    background: url(../images/logo-fic.jpg) 0 0 no-repeat; }
 
   .footer .con {
     @include inline_block(middle);
@@ -48,7 +48,7 @@
 
   .footer .limit {
     padding-left: 70px;
-    background: url(../../images/limit.jpg) 0 no-repeat;
+    background: url(../images/limit.jpg) 0 no-repeat;
     @include inline_block("middle");
   }
 }
@@ -174,7 +174,7 @@
   .footer .line {
     display: none; }
   .footer .foot-line {
-    background: url(../../images/logo-fic.jpg) 0 no-repeat;
+    background: url(../images/logo-fic.jpg) 0 no-repeat;
     padding-left: 70px; }
   .flogo,.logo-fic{
     display: none!important;

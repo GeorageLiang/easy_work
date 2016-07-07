@@ -14,24 +14,37 @@
     width: 100%;
     @include min-width($min-w);
     height:$height;
+    @include swaper(#{$min-w}px,$bg-center);
+  }
+  .container-bg{
+    position: absolute;
+    @include min-width($min-w);
+    height: $height;
+    overflow:hidden ;
+    top:0;
+    left:0;
     background: url(#{$bg}) no-repeat;
     background-position: top center;
-    @include swaper(#{$min-w}px,$bg-center);
   }
 }
 
 @mixin contain-res($small-bg,$small-h){
   .container{
     width: 100%;
-    background: url(#{$small-bg}) no-repeat center top;
-    background-size: 100% 100%;
-    min-width: 0;
+    min-width: 320px;
     height: rem($small-h,2);
     .swaper{
       background: transparent;
       width: 100%;
       height: 100%;
     }
+  }
+  .container-bg{
+    width: 100%;
+    min-width: 320px;
+    height: rem($small-h,2);
+    background: url(#{$small-bg}) no-repeat center top;
+    background-size: 100% 100%;
   }
 }
 
