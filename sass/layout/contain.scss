@@ -19,16 +19,28 @@
   .container-bg{
     position: absolute;
     @include min-width($min-w);
-    height: $height;
+    height: auto;
     overflow:hidden ;
     top:0;
     left:0;
-    background: url(#{$bg}) no-repeat;
-    background-position: top center;
+    .bg-item{
+      width: 100%;
+    }
+    @for $i from 1 to $container-bg-num+1 {
+      .bg-item-#{$i} {
+        background: url("../../images/bg-item-#{$i}.jpg") no-repeat;
+        background-position: top center;
+        @if length($bg-items-h)==1{
+          height:$bg-items-h;
+        }@else {
+          height:nth($bg-items-h,$i);
+        }
+      }
+    }
   }
 }
 
-@mixin contain-res($small-bg,$small-h){
+@mixin contain-res($small-h){
   .container{
     width: 100%;
     min-width: 320px;
@@ -42,9 +54,22 @@
   .container-bg{
     width: 100%;
     min-width: 320px;
-    height: rem($small-h,2);
-    background: url(#{$small-bg}) no-repeat center top;
-    background-size: 100% 100%;
+    height: auto;
+    .bg-item{
+      width: 100%;
+    }
+    @for $i from 1 to $container-sm-num+1 {
+      .bg-item-#{$i} {
+        background: url("../../images/bg-sm-#{$i}.jpg") no-repeat;
+        background-position: top center;
+        background-size: 100% 100%;
+        @if length($bg-sms-h)==1{
+          height:rem($bg-sms-h,2);
+        }@else {
+          height:rem(nth($bg-sms-h,$i),2);
+        }
+      }
+    }
   }
 }
 
