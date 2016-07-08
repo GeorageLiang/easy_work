@@ -49,6 +49,13 @@
   @include ieHack("7","background-attachment","fixed");
 }
 
+@mixin box-size($box:content-box){
+  -moz-box-sizing: $box;  /*Firefox3.5+*/
+  -webkit-box-sizing: $box; /*Safari3.2+*/
+  -o-box-sizing: $box; /*Opera9.6*/
+  -ms-box-sizing: $box; /*IE8*/
+  box-sizing: $box; /*W3C标准(IE9+，Safari5.1+,Chrome10.0+,Opera10.6+都符合box-sizing的w3c标准语法)*/
+}
 
 @mixin p-height($footP_height){
   *position: relative;

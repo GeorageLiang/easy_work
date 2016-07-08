@@ -1,0 +1,15 @@
+@import "../util/utils_mixin";
+.gift-box{
+  &--tb{
+    text-align: center;
+  }
+  &--lr{
+    text-align: left;
+    img{
+      @include inline_block(middle);
+    }
+    p{
+      @include inline_block(middle);
+    }
+  }
+}

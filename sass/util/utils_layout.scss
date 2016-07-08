@@ -2,7 +2,7 @@
 @import "../layout/header";
 @import "../layout/pop";
 @import "../layout/footer";
-
+@import "../layout/gift-box";
 @mixin htmlInit($bgc){
   html{
     @include htmlScollInit();

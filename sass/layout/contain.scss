@@ -6,6 +6,18 @@
     margin: 0 auto;
     background: url(#{$bg-center}) no-repeat;
     background-position: top center;
+
+    @for $i from 1 to $container-bg-num+1 {
+      .page-item-#{$i} {
+        @include box-size(border-box);
+        @if length($bg-items-h)==1{
+          height:$bg-items-h;
+        }@else {
+          height:nth($bg-items-h,$i);
+        }
+      }
+    }
+
   }
 }
 @mixin contain($min-w,$height,$bg,$bg-center){
@@ -49,6 +61,16 @@
       background: transparent;
       width: 100%;
       height: 100%;
+      @for $i from 1 to $container-sm-num+1 {
+        .page-item-#{$i} {
+          @include box-size(border-box);
+          @if length($bg-sms-h)==1{
+            height:rem($bg-sms-h,2);
+          }@else {
+            height:rem(nth($bg-sms-h,$i),2);
+          }
+        }
+      }
     }
   }
   .container-bg{
