@@ -2,3 +2,15 @@
 @function rem($size,$pi:1){
   @return  $size / 10px / $pi * 1rem ;
 }
+
+@function listSum($list){
+  $sum:0;
+  @if length($list)==1{
+    @return $list;
+  }@else {
+    @each $num in $list {
+      $sum:$sum+$num;
+    }
+    @return $sum;
+  }
+}

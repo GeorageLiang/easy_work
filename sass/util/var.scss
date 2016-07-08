@@ -1,3 +1,4 @@
+@import "utils_functions";
 //$footH:100px;
 //$htmlColor:#fff;
 //$bodyColor:#fff;
@@ -12,14 +13,28 @@ $screen-sm-min:700px;
 
 $type:"!pc";//默认"pc"，要开发响应式页面设置"!pc" 注意：同时要开启模板里面的type属性（template/var）
 
+//container-bg
+$container-bg-num:3; //当一屏为非单图，多图多段，用此属性配置单屏（非小屏）块数 注意：去（template/var）配置相关属性
+$container-sm-num:4; //当一屏为非单图，多图多段，用此属性配置单屏（小屏）块数 注意：去（template/var）配置相关属性
+
+//--container-item   //用此属性配置各个块的背景高度（多值或者单值） 多值为多块，单值为单背景页面   去（template/var）配置相关属性
+$bg-items-h:854px 545px 701px;
+$bg-sms-h:844px 499px 807px 731px;
+//$bg-items-h:854px;
+//$bg-sms-h:844px;
+//-----------------
+
+
 //container
 $min-width:1000;
-$page-height:1080px;
+$page-height:listSum($bg-items-h);
 $container-bg:"../images/bg.jpg";
 $container-center-bg:"";
+
+
 //container--response
 $small-bg:"../images/small-bg.jpg";
-$small-h:1400px;
+$small-h:listSum($bg-sms-h);
 
 //header
 $header-logo-bg:"../images/logo.png";
@@ -48,6 +63,7 @@ $pop-border-color:#fff;
 
 $close-bg:transparent;
 $close-position:"inside";//"inside"
+
 
 
 

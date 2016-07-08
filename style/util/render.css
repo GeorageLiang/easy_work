@@ -597,6 +597,72 @@ a {
 .artical--txt {
   text-align: left !important; }
 
+.gift-box--tb {
+  text-align: center; }
+
+.gift-box--lr {
+  text-align: left; }
+  .gift-box--lr img {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle; }
+  .gift-box--lr p {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle; }
+
+.col-lg-1 {
+  width: 8.33333%;
+  float: left; }
+
+.col-lg-2 {
+  width: 16.66667%;
+  float: left; }
+
+.col-lg-3 {
+  width: 25%;
+  float: left; }
+
+.col-lg-4 {
+  width: 33.33333%;
+  float: left; }
+
+.col-lg-5 {
+  width: 41.66667%;
+  float: left; }
+
+.col-lg-6 {
+  width: 50%;
+  float: left; }
+
+.col-lg-7 {
+  width: 58.33333%;
+  float: left; }
+
+.col-lg-8 {
+  width: 66.66667%;
+  float: left; }
+
+.col-lg-9 {
+  width: 75%;
+  float: left; }
+
+.col-lg-10 {
+  width: 83.33333%;
+  float: left; }
+
+.col-lg-11 {
+  width: 91.66667%;
+  float: left; }
+
+.col-lg-12 {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }
+
 .row {
   max-width: 100%;
   margin-left: auto;
@@ -699,7 +765,7 @@ html, body {
   width: 100%;
   _width: expression((document.documentElement.clientWidth||document.body.clientWidth) < 1000? "1000px":"100%");
   min-width: 1000px;
-  height: 1080px; }
+  height: 2100px; }
   .container .swaper {
     position: relative;
     width: 1000px;
@@ -707,18 +773,66 @@ html, body {
     margin: 0 auto;
     background: url() no-repeat;
     background-position: top center; }
+    .container .swaper .page-item-1 {
+      -moz-box-sizing: border-box;
+      /*Firefox3.5+*/
+      -webkit-box-sizing: border-box;
+      /*Safari3.2+*/
+      -o-box-sizing: border-box;
+      /*Opera9.6*/
+      -ms-box-sizing: border-box;
+      /*IE8*/
+      box-sizing: border-box;
+      /*W3C��׼(IE9+��Safari5.1+,Chrome10.0+,Opera10.6+������box-sizing��w3c��׼�﷨)*/
+      height: 854px; }
+    .container .swaper .page-item-2 {
+      -moz-box-sizing: border-box;
+      /*Firefox3.5+*/
+      -webkit-box-sizing: border-box;
+      /*Safari3.2+*/
+      -o-box-sizing: border-box;
+      /*Opera9.6*/
+      -ms-box-sizing: border-box;
+      /*IE8*/
+      box-sizing: border-box;
+      /*W3C��׼(IE9+��Safari5.1+,Chrome10.0+,Opera10.6+������box-sizing��w3c��׼�﷨)*/
+      height: 545px; }
+    .container .swaper .page-item-3 {
+      -moz-box-sizing: border-box;
+      /*Firefox3.5+*/
+      -webkit-box-sizing: border-box;
+      /*Safari3.2+*/
+      -o-box-sizing: border-box;
+      /*Opera9.6*/
+      -ms-box-sizing: border-box;
+      /*IE8*/
+      box-sizing: border-box;
+      /*W3C��׼(IE9+��Safari5.1+,Chrome10.0+,Opera10.6+������box-sizing��w3c��׼�﷨)*/
+      height: 701px; }
 
 .container-bg {
   position: absolute;
   width: 100%;
   _width: expression((document.documentElement.clientWidth||document.body.clientWidth) < 1000? "1000px":"100%");
   min-width: 1000px;
-  height: 1080px;
+  height: auto;
   overflow: hidden;
   top: 0;
-  left: 0;
-  background: url(../images/bg.jpg) no-repeat;
-  background-position: top center; }
+  left: 0; }
+  .container-bg .bg-item {
+    width: 100%; }
+  .container-bg .bg-item-1 {
+    background: url("../../images/bg-item-1.jpg") no-repeat;
+    background-position: top center;
+    height: 854px; }
+  .container-bg .bg-item-2 {
+    background: url("../../images/bg-item-2.jpg") no-repeat;
+    background-position: top center;
+    height: 545px; }
+  .container-bg .bg-item-3 {
+    background: url("../../images/bg-item-3.jpg") no-repeat;
+    background-position: top center;
+    height: 701px; }
 
 .header {
   position: absolute;
@@ -757,13 +871,10 @@ html, body {
   width: 100%;
   _width: expression((document.documentElement.clientWidth||document.body.clientWidth) < 1000? "1000px":"100%");
   min-width: 1000px;
-  margin-top: -80px;
   clear: both;
   overflow: hidden;
   position: relative;
   background-color: #000;
-  position: absolute;
-  bottom: 0;
   opacity: 1;
   -moz-opacity: 1;
   filter: alpha(opacity=100); }
@@ -847,3 +958,10 @@ html, body {
   filter: alpha(opacity=60);
   z-index: 999;
   display: none; }
+
+#swf {
+  position: absolute;
+  top: 0;
+  left: 0;
+  left: 50%;
+  margin-left: -964px; }

@@ -5,8 +5,8 @@
     padding: 30px 0;
     background-color: #121B2C;
     color: #61676F;
-    position: absolute;
-    bottom: 0;
+    //position: absolute;
+    //bottom: 0;
   }
   .footer a {
     color: #61676F;
@@ -58,7 +58,7 @@
   .footer {
     width: 100%;
     @include min-width($min-w);
-    margin-top: -80px;
+    //margin-top: -80px;
     clear: both;
     overflow: hidden;
     position: relative;
@@ -90,7 +90,7 @@
     width: 100%;
     min-width: 320px;
     height: 13.1rem;
-    margin-top: -13.1rem;;
+    //margin-top: -13.1rem;;
     background: #242627;
     @include opacity(100);
     &-content {
@@ -122,13 +122,13 @@
   .footer {
     width: 100%;
     @include min-width($min-w);
-    margin-top: -80px;
+    //margin-top: -80px;
     clear: both;
     overflow: hidden;
     position: relative;
     background-color: $bg;
-    position: absolute;
-    bottom: 0;
+    //position: absolute;
+    //bottom: 0;
     @include opacity($op);
     &-content {
       position: relative;

@@ -13,3 +13,11 @@
 @include header($header-logo-bg,$header-width,$header-height,$nav-bg,$nav-width,$nav-height);
 @include footer($type,$min-width,$footer-color,$footer-opacity,$footer-content-width);
 @include pop($pop-bg,$pop-width,$pop-height,$pop-border-size,$pop-border-color,$close-bg);
+
+#swf{
+  position: absolute;
+  top:0;
+  left: 0;
+  left: 50%;
+  margin-left: -964px;
+}
