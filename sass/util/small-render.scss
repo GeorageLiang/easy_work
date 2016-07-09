@@ -11,6 +11,7 @@
   @include contain-res($small-h);
   @include footer-res();
   @include pop-res();
+  @include header-res();
   html {
     width: 100%;
     min-width: 320px;

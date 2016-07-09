@@ -1,3 +1,30 @@
 @import "util/render";
-
-
+.foot-content{
+  text-align: center;
+  a{
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+  span{
+    margin: 0 8px;
+  };
+}
+.header{
+  .header__logo{
+   margin-top: 10px;
+  }
+  a{
+    font-size: 16px;
+    line-height:85px;
+  }
+}
+.notic{
+  font-size: 14px;
+  color: #fff;
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+}
+.bg-item-center-1{
+ background: url("../images/page-item-1.jpg") no-repeat;
+}

@@ -1,1 +1,16 @@
 @import "util/small-render";
+.bg-item-center-1{
+  background: transparent;
+}
+.notic{
+  display: none;
+}
+.header{
+  @include box-size(border-box);
+  padding-left: 15px;
+  padding-right: 15px;
+  a{
+    font-size: rem(16px,2);
+    line-height:rem(85px,2);
+  }
+}

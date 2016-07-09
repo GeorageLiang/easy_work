@@ -24,15 +24,17 @@
     }
 }
 
-@mixin header($logo-bg,$logo-w,$logo-h,$nav-bg,$nav-w,$nav-h){
+@mixin header($logo-bg,$header-height,$logo-w,$logo-h,$nav-bg,$nav-w,$nav-h){
   .header{
     position: absolute;
+    height: $header-height;
     width: 100%;
-    padding-top: 5px;
+    //padding-top: 5px;
     &__logo{
       background: url(#{$logo-bg}) no-repeat;
-      width:203px;
-      height: 113px;
+      background-size: 100%;
+      width:$logo-w;
+      height: $logo-h;
       float: left;
     }
     &__nav{
@@ -42,5 +44,15 @@
       height: $nav-h;
     }
     @include nav($nav-switch);
+  }
+}
+
+@mixin header-res(){
+  .header{
+    height: rem($header-height,2);
+    &__logo{
+      width:rem($logo-w,2);
+      height: rem($logo-h,2);
+    }
   }
 }

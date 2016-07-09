@@ -17,11 +17,11 @@ finally{
             return false;
         });
 
-        $("body").on("click",function(){
-            $(".pop6").show();
-            $(".mask").show();
-            return false
-        });
+        //$("body").on("click",function(){
+        //    $(".pop6").show();
+        //    $(".mask").show();
+        //    return false
+        //});
     });
 }
 

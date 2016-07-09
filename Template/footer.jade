@@ -23,6 +23,9 @@ include var
                     | 遊戲情節涉及暴力、戀愛交友<br>
                     | 請注意使用時間，避免沉迷於遊戲<br>
                     | 本遊戲部分內容需要購買遊戲幣消費
+        - else if(footerType == "custom")
+            .footer-center
+                include ../pageContent/footer
     - else
         - if(footerType == "default")
             .footer-content.row
@@ -52,3 +55,6 @@ include var
                     | 遊戲情節涉及暴力、戀愛交友<br>
                     | 請注意使用時間，避免沉迷於遊戲<br>
                     | 本遊戲部分內容需要購買遊戲幣消費
+        - else if(footerType == "custom")
+            .footer-center
+                include ../pageContent/footer
