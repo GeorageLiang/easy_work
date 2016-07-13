@@ -9,10 +9,10 @@
 @import "grid";
 
 @include htmlInit($html-init-color);
-@include contain($min-width,$page-height,$container-bg,$container-center-bg);
-@include header($header-logo-bg,$header-width,$header-height,$nav-bg,$nav-width,$nav-height);
+@include contain($min-width,$page-height,$container-center-bg,$header-height);
+@include header($header-logo-bg,$header-height,$logo-w,$logo-h,$nav-bg,$nav-width,$nav-height);
 @include footer($type,$min-width,$footer-color,$footer-opacity,$footer-content-width);
-@include pop($pop-bg,$pop-width,$pop-height,$pop-border-size,$pop-border-color,$close-bg);
+@include pop($pop-bg,$pop-width,$pop-height,$pop-border-size,$pop-border-color,$close-bg,$close-w,$close-h);
 
 #swf{
   position: absolute;

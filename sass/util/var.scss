@@ -7,7 +7,7 @@
 //$screen-sm-min:700px;
 
 //html-init
-$html-init-color:#000;
+$html-init-color:#000;;
 $screen-md-min:1000px;
 $screen-sm-min:700px;
 
@@ -20,15 +20,36 @@ $container-sm-num:4; //当一屏为非单图，多图多段，用此属性配置单屏（小屏）块数 注
 //--container-item   //用此属性配置各个块的背景高度（多值或者单值） 多值为多块，单值为单背景页面   去（template/var）配置相关属性
 $bg-items-h:854px 545px 701px;
 $bg-sms-h:844px 499px 807px 731px;
-//$bg-items-h:854px;
-//$bg-sms-h:844px;
+//$bg-items-h:1080px;
+//$bg-sms-h:1180px;
 //-----------------
 
+//header
+$header-logo-bg:"../images/base/logo.png";
+$header-width:203px;
+$header-height:85px;
+
+$out-header:false;
+$header-color:#fff;
+
+//header-logo
+$logo-w:203px;
+$logo-h:113px;
+
+//nav
+$nav-switch:false;
+$loginBox-switch:false;
+$nav-bg:"../images/base/nav.png";
+$nav-width:309px;
+$nav-height:29px;
+$nav-a-color:#fff;
 
 //container
 $min-width:1000;
 $page-height:listSum($bg-items-h);
-$container-bg:"../images/bg.jpg";
+//$container-bg:"../images/bg.jpg";
+//$container-bg:"../images/bg.jpg";
+
 $container-center-bg:"";
 
 
@@ -36,32 +57,26 @@ $container-center-bg:"";
 $small-bg:"../images/small-bg.jpg";
 $small-h:listSum($bg-sms-h);
 
-//header
-$header-logo-bg:"../images/logo.png";
-$header-width:203px;
-$header-height:113px;
-//nav
-$nav-switch:false;
-$nav-bg:"../images/nav.png";
-$nav-width:275px;
-$nav-height:32px;
+
 //footer
 $footer-color:#000;
 $footer-opacity:100;
-$footer-content-width:920px;
+$footer-content-width:950px;
 $footer-h:220px;
 
 //默认"default"，多栏图标形式设置"limit" 注意：同时要开启模板里面的footerType属性（template/var）
-$footerType: "default";
+$footerType: "limit";
 //pop
-$pop-bg:"../images/pop_bg.jpg";
-$pop-width:757px;
-$pop-height:377px;
+$pop-bg:"../images/base/pop_bg.jpg";
+$pop-width:556px;
+$pop-height:331px;
 
-$pop-border-size:7px;
+$pop-border-size:0px;
 $pop-border-color:#fff;
 
 $close-bg:transparent;
+$close-w:44px;
+$close-h:41px;
 $close-position:"inside";//"inside"
 
 
