@@ -2,6 +2,10 @@ include var
 
 .container-bg
     #swf
+    - if (outhead == true){
+        .bg-head
+    - }
     - for(var i =1;i<=containerBgNum;i++){
         .bg-item(class="bg-item-"+i)
+            .bg-item-center(class="bg-item-center-"+i)
     - }

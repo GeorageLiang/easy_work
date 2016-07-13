@@ -13,7 +13,7 @@
     display: none;
   }
 }
-@mixin pop($bg,$width,$height,$border-size,$border-color,$close-bg){
+@mixin pop($bg,$width,$height,$border-size,$border-color,$close-bg,$close-w,$close-h){
   .pop{
     &-container{
       background: url("#{$bg}") no-repeat;
@@ -39,8 +39,8 @@
     }
     .close{
       background: $close-bg;
-      width:44px;
-      height:41px;
+      width:$close-w;
+      height:$close-h;
       position: absolute;
       @if ($close-position == "outside"){
         right:-50px;
@@ -82,8 +82,8 @@
       }
     }
     .close{
-      width:rem(44px,2);
-      height:rem(41px,2);
+      width:rem($close-w,2);
+      height:rem($close-h,2);
     }
   }
 }

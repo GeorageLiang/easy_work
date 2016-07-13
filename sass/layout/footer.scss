@@ -34,7 +34,7 @@
     margin-right: 5px;
     width: 47px;
     height: 43px;
-    background: url(../images/logo-fic.jpg) 0 0 no-repeat; }
+    background: url(../images/base/logo-fic.jpg) 0 0 no-repeat; }
 
   .footer .con {
     @include inline_block(middle);
@@ -48,7 +48,7 @@
 
   .footer .limit {
     padding-left: 70px;
-    background: url(../images/limit.jpg) 0 no-repeat;
+    background: url(../images/base/limit.jpg) 0 no-repeat;
     @include inline_block("middle");
   }
 }
@@ -84,6 +84,30 @@
     }
   }
 }
+
+//type=pc，footerType为custom时样式的非媒体查询
+@mixin footer-pc-custom($min-w,$bg,$op,$footer-content-width){
+  .footer {
+    width: 100%;
+    @include min-width($min-w);
+    //margin-top: -80px;
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    background-color: $bg;
+    @include opacity($op);
+    &-center {
+      width: $footer-content-width;
+      margin: 0 auto;
+      padding: 15px 0;
+      color: #7d725d;
+      position: relative;
+      @include container();
+    }
+  }
+}
+
+
 //type！=pc，footerType为default时样式的媒体查询（小屏）
 @mixin footer-small-default(){
   .footer {
@@ -136,7 +160,7 @@
       width: $footer-content-width;
       &__logo {
         @include inline_block(middle);
-        background: url("../../images/phone-logo.png") no-repeat;
+        background: url("../images/base/phone-logo.png") no-repeat;
         background-size: 100%;
         width: rem($logo-w);
         height: rem($logo-h);
@@ -174,10 +198,21 @@
   .footer .line {
     display: none; }
   .footer .foot-line {
-    background: url(../images/logo-fic.jpg) 0 no-repeat;
+    background: url(../images/base/logo-fic.jpg) 0 no-repeat;
     padding-left: 70px; }
   .flogo,.logo-fic{
     display: none!important;
+  }
+}
+//type！=pc，footerType为custom时媒体查询样式（小屏）
+@mixin footer-small-custom(){
+  .footer {
+    width: 100%;
+    min-width: 320px;
+    &-center {
+      padding: rem(50px,2) 0;
+      width: 80%;
+    }
   }
 }
 
@@ -187,16 +222,22 @@
     @if $footerType == "default"{
       @include footer-pc-default($min-w,$bg,$op,$footer-content-width,$logo-w,$logo-h);
     }
-    @else{
+    @else if $footerType == "limit"{
       @include footer-pc-limit($logo-w,$logo-h);
+    }
+    @else if $footerType == "custom"{
+      @include footer-pc-custom($min-w,$bg,$op,$footer-content-width)
     }
   }
   @else {
     @if $footerType == "default" {
       @include footer-res-default($min-w,$bg,$op,$footer-content-width,$logo-w,$logo-h);
     }
-    @else{
+    @else if $footerType == "limit"{
       @include footer-pc-limit($logo-w,$logo-h);
+    }
+    @else if $footerType == "custom"{
+      @include footer-pc-custom($min-w,$bg,$op,$footer-content-width)
     }
   }
 }
@@ -207,7 +248,10 @@
   @if $footerType == "default" {
     @include footer-small-default();
   }
-  @else{
+  @else if $footerType == "limit"{
     @include footer-small-limit();
+  }
+  @else if $footerType == "custom"{
+    @include footer-small-custom
   }
 }
