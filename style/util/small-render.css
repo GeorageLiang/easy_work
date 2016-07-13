@@ -662,7 +662,7 @@ dialog::backdrop {
   .container-bg .bg-item-center {
     display: none; }
   .container-bg .bg-item-1 {
-    background: url("../../images/bg-sm-1.jpg") no-repeat;
+    background: url("../images/bg-sm-1.jpg") no-repeat;
     background-position: top center;
     background-size: 100% 100%;
     height: 42.2rem; }

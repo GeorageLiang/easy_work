@@ -814,7 +814,7 @@ html, body {
     height: 100%;
     margin: 0 auto; }
   .container-bg .bg-item-1 {
-    background: url("../../images/bg-item-1.jpg") no-repeat;
+    background: url("../images/bg-item-1.jpg") no-repeat;
     background-position: top center;
     height: 854px; }
 

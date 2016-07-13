@@ -60,7 +60,7 @@
     }
     @for $i from 1 to $container-bg-num+1 {
       .bg-item-#{$i} {
-        background: url("../../images/bg-item-#{$i}.jpg") no-repeat;
+        background: url("../images/bg-item-#{$i}.jpg") no-repeat;
         background-position: top center;
         @if length($bg-items-h)==1{
           height:$bg-items-h;
@@ -123,7 +123,7 @@
 
     @for $i from 1 to $container-sm-num+1 {
       .bg-item-#{$i} {
-        background: url("../../images/bg-sm-#{$i}.jpg") no-repeat;
+        background: url("../images/bg-sm-#{$i}.jpg") no-repeat;
         background-position: top center;
         background-size: 100% 100%;
         @if length($bg-sms-h)==1{
